@@ -4,9 +4,14 @@ from PIL import Image, ImageEnhance
 from langdetect import detect
 from deep_translator import GoogleTranslator
 
-# Configurar Tesseract
-TESSERACT_PATH = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
+# Configurar Tesseract OCR
+# En Windows, el ejecutable de Tesseract suele estar en C:\Program Files\Tesseract-OCR\tesseract.exe
+
+# TESSERACT_PATH = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
+
+# En Linux, el ejecutable de Tesseract suele estar en /usr/bin/tesseract
+pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
 # Interfaz
 st.title("Extraer y Traducir Texto de Imágenes")
